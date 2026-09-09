@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt" data-palette="amber">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guilherme Feitoza — Engenheiro de Software Full Stack | Web &amp; Mobile</title>
+<meta name="description" content="Currículo de Guilherme Feitoza de Sousa Lima — engenheiro de software full stack há mais de uma década em Python, Django, FastAPI, Ruby on Rails, React Native e C#/.NET. Mestrando em Visão Computacional pela UFPI.">
+<meta name="author" content="Guilherme Feitoza de Sousa Lima">
+<meta name="theme-color" content="#201e1a">
+
+<link rel="canonical" href="https://guilhermefeitosa66.github.io/profile/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Guilherme Feitoza — Engenheiro de Software Full Stack | Web &amp; Mobile">
+<meta property="og:description" content="Mais de uma década em web e mobile: Python, Django, FastAPI, Ruby on Rails, React Native e C#/.NET. Cofundador da Hash Bang e desenvolvedor do VacinAção®, premiado no 27º CBCENF.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://guilhermefeitosa66.github.io/profile/">
+<meta property="og:image" content="https://guilhermefeitosa66.github.io/profile/assets/img/profile.jpeg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/curriculo.css">
+
+<!-- Sorteia a paleta e resolve o idioma ANTES da primeira pintura:
+     sem isso a página apareceria em âmbar e piscaria na cor sorteada. -->
+<script>
+(function () {
+  var PALETTES = ['amber', 'orange', 'ruby', 'rose', 'violet', 'ocean', 'teal', 'forest'];
+  var root = document.documentElement;
+  var q = new URLSearchParams(location.search);
+
+  // ?palette=ocean fixa uma variação (útil para compartilhar um link
+  // sempre igual); sem isso, sorteia uma a cada carregamento
+  var palette = q.get('palette');
+  root.dataset.palette = PALETTES.indexOf(palette) > -1
+    ? palette
+    : PALETTES[Math.floor(Math.random() * PALETTES.length)];
+
+  // ?lang=en > escolha salva > idioma do navegador
+  var lang = q.get('lang');
+  if (lang !== 'pt' && lang !== 'en') {
+    try { lang = localStorage.getItem('cv-lang'); } catch (e) { /* modo anônimo */ }
+  }
+  if (lang !== 'pt' && lang !== 'en') {
+    lang = /^pt\b/i.test(navigator.language || '') ? 'pt' : 'en';
+  }
+  root.dataset.lang = lang;
+  root.lang = lang === 'pt' ? 'pt-BR' : 'en';
+})();
+</script>
+</head>
+<body>
+
+<!-- faixa escura que se repete em todas as páginas na impressão -->
+<div class="print-band" aria-hidden="true"></div>
+
+<div class="page">
+
+  <nav class="toolbar no-print" aria-label="Ações">
+    <div class="toolbar__stamp">
+      <span lang="pt">Currículo</span><span lang="en">Résumé</span> ·
+      <span data-stamp-date>2026</span>
+    </div>
+
+    <div class="toolbar__actions">
+      <div class="langswitch" role="group" aria-label="Idioma / Language">
+        <button class="langswitch__btn" type="button" data-set-lang="pt" aria-pressed="true" title="Português (Brasil)">
+          <span class="flag" aria-hidden="true"><svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#009c3b"/><path d="M14 2.4 25.6 10 14 17.6 2.4 10Z" fill="#ffdf00"/><circle cx="14" cy="10" r="4.2" fill="#002776"/></svg></span>
+          <span>PT-BR</span>
+        </button>
+        <button class="langswitch__btn" type="button" data-set-lang="en" aria-pressed="false" title="English">
+          <span class="flag" aria-hidden="true"><svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="20" fill="#012169"/><path d="M0 0 28 20M28 0 0 20" stroke="#fff" stroke-width="4.4"/><path d="M0 0 28 20M28 0 0 20" stroke="#c8102e" stroke-width="2.2"/><path d="M14 0v20M0 10h28" stroke="#fff" stroke-width="6.8"/><path d="M14 0v20M0 10h28" stroke="#c8102e" stroke-width="4"/></svg></span>
+          <span>English</span>
+        </button>
+      </div>
+
+      <button class="btn btn--icon" type="button" data-shuffle
+              title="Trocar a paleta de cores" aria-label="Trocar a paleta de cores">
+        <span class="swatch" aria-hidden="true"></span>
+      </button>
+
+      <a class="btn btn--ghost" href="mailto:guilherme@feitoza.dev"><span lang="pt">Contato</span><span lang="en">Contact</span></a>
+      <button class="btn btn--solid" type="button" data-print><span lang="pt">Baixar PDF</span><span lang="en">Download PDF</span></button>
+    </div>
+  </nav>
+
+  <article class="sheet">
+
+    <!-- ============================ coluna escura ============================ -->
+    <aside class="sidebar">
+      <div class="sidebar__deco-top" aria-hidden="true"></div>
+      <div class="sidebar__deco-bottom" aria-hidden="true"></div>
+
+      <div class="avatar-wrap">
+        <div class="avatar-ring">
+          <span class="avatar-fallback" aria-hidden="true">GF</span>
+          <!-- a foto vem da paleta sorteada (--photo, no CSS);
+               se ela não carregar, ficam as iniciais atrás -->
+          <div class="avatar" role="img" aria-label="Guilherme Feitoza de Sousa Lima"></div>
+        </div>
+      </div>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Contato</span><span lang="en">Contact</span></h2>
+        </div>
+        <ul class="contact">
+          <li><span><a href="tel:+5589999329299">+55 (89) 99932-9299</a></span></li>
+          <li><span><a href="mailto:guilherme@feitoza.dev">guilherme@feitoza.dev</a></span></li>
+          <li><span><a href="https://linkedin.com/in/guilherme-lima-0260a154" rel="me noopener">linkedin.com/in/guilherme-lima</a></span></li>
+          <li><span><a href="https://github.com/guilhermefeitosa66" rel="me noopener">github.com/guilhermefeitosa66</a></span></li>
+          <li>
+            <span lang="pt">Picos, PI — Brasil<br>Disponível para trabalho remoto</span>
+            <span lang="en">Picos, PI — Brazil<br>Available for remote work</span>
+          </li>
+        </ul>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Formação</span><span lang="en">Education</span></h2>
+        </div>
+        <div class="edu">
+          <div>
+            <div class="edu__name"><span lang="pt">Mestrado em Visão Computacional</span><span lang="en">Master's in Computer Vision</span></div>
+            <div><span lang="pt">UFPI — Universidade Federal do Piauí</span><span lang="en">UFPI — Federal University of Piauí</span></div>
+            <div class="edu__when"><span lang="pt">Em andamento</span><span lang="en">In progress</span></div>
+          </div>
+          <div>
+            <div class="edu__name"><span lang="pt">Bacharelado em Sistemas de Informação</span><span lang="en">B.Sc. in Information Systems</span></div>
+            <div><span lang="pt">UFPI — Universidade Federal do Piauí</span><span lang="en">UFPI — Federal University of Piauí</span></div>
+            <div class="edu__when">2017</div>
+          </div>
+          <div>
+            <div class="edu__name"><span lang="pt">Técnico em Desenvolvimento de Software</span><span lang="en">Technical Degree in Software Development</span></div>
+            <div><span lang="pt">IFPI — Instituto Federal do Piauí</span><span lang="en">IFPI — Federal Institute of Piauí</span></div>
+            <div class="edu__when">2010</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Idiomas</span><span lang="en">Languages</span></h2>
+        </div>
+        <ul class="langs">
+          <li>
+            <b><span lang="pt">Português</span><span lang="en">Portuguese</span></b>
+            <span lang="pt">Nativo</span><span lang="en">Native</span>
+          </li>
+          <li>
+            <b><span lang="pt">Inglês</span><span lang="en">English</span></b>
+            <span lang="pt">Profissional</span><span lang="en">Professional</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="side-section block">
+        <div class="side-head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2>Stack</h2>
+        </div>
+        <ul class="tags">
+          <li>Python</li>
+          <li>Django</li>
+          <li>FastAPI</li>
+          <li>Ruby on Rails</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>C# / .NET</li>
+          <li>PostgreSQL</li>
+          <li>MongoDB</li>
+          <li>RabbitMQ</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>AWS</li>
+          <li>Azure</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- ============================ coluna clara ============================= -->
+    <div class="main">
+      <div class="main__rail" aria-hidden="true"></div>
+      <div class="main__deco" aria-hidden="true"></div>
+
+      <header class="masthead block">
+        <h1>Guilherme <em>Feitoza de Sousa Lima</em></h1>
+        <div class="masthead__role">
+          <span lang="pt">Engenheiro de Software Full Stack · Web &amp; Mobile</span>
+          <span lang="en">Full Stack Software Engineer · Web &amp; Mobile</span>
+        </div>
+      </header>
+
+      <section class="section section--about block">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Sobre</span><span lang="en">About</span></h2>
+        </div>
+        <p class="about" lang="pt">Engenheiro de software full stack há mais de uma década, atuando em ecossistemas web e mobile com <strong>Python (Django, FastAPI)</strong>, <strong>Ruby on Rails</strong>, <strong>C#/.NET</strong> e <strong>React Native</strong>. Minha trajetória passa por instituições públicas, educação, energia, saúde e fintech, sempre entregando soluções escaláveis, seguras e de alto desempenho. Como cofundador da <strong>Hash Bang LTDA</strong>, desenvolvi o <strong>VacinAção®</strong>, aplicativo premiado no 27º CBCENF por combater a desinformação e apoiar a imunização infantil. Na <strong>Zapay</strong>, contribuí para sistemas críticos de documentação de veículos e condutores durante a aquisição pelo grupo Corpay / Sem Parar. Hoje curso <strong>mestrado em Visão Computacional na UFPI</strong>, somando pesquisa acadêmica à prática de arquitetura de software, automação DevOps e Clean Code.</p>
+        <p class="about" lang="en">Full stack software engineer with over a decade across web and mobile ecosystems, working with <strong>Python (Django, FastAPI)</strong>, <strong>Ruby on Rails</strong>, <strong>C#/.NET</strong> and <strong>React Native</strong>. My path spans public institutions, education, energy, healthcare and fintech, consistently delivering scalable, secure and high-performance solutions. As co-founder of <strong>Hash Bang LTDA</strong>, I built <strong>VacinAção®</strong>, an app recognized at the 27th CBCENF for fighting misinformation and supporting childhood immunization. At <strong>Zapay</strong>, I contributed to critical vehicle and driver documentation systems through the company's acquisition by Corpay / Sem Parar. I am currently pursuing a <strong>master's degree in Computer Vision at UFPI</strong>, pairing academic research with software architecture, DevOps automation and Clean Code.</p>
+      </section>
+
+      <section class="section block">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Case em destaque</span><span lang="en">Featured case</span></h2>
+        </div>
+
+        <div class="case">
+          <div class="case__top">
+            <div class="case__name">VacinAção®</div>
+            <div class="case__award"><span lang="pt">Premiado no 27º CBCENF</span><span lang="en">Awarded at the 27th CBCENF</span></div>
+          </div>
+          <p class="case__lede" lang="pt">Aplicativo de apoio à imunização infantil, construído com o Programa de Pós-Graduação em Enfermagem da UFPI. Liderei o ciclo completo de desenvolvimento — do app mobile ao backend — e o produto hoje é testado em salas públicas de vacinação.</p>
+          <p class="case__lede" lang="en">A childhood immunization app built with UFPI's Graduate Nursing Program. I led the full development cycle, from the mobile app to the backend, and the product is now tested in public vaccination clinics.</p>
+
+          <div class="stack case__stack">React Native (iOS · Android) · Python · Django · APIs REST</div>
+
+          <dl class="case__facts">
+            <div>
+              <dt lang="pt">Problema</dt><dt lang="en">Problem</dt>
+              <dd lang="pt">Desinformação sobre vacinas e dificuldade dos pais em acompanhar o calendário de imunização dos filhos.</dd>
+              <dd lang="en">Vaccine misinformation and the difficulty parents face in tracking their children's immunization schedule.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Usuários</dt><dt lang="en">Users</dt>
+              <dd lang="pt">Pais e responsáveis, além das equipes das salas públicas de vacinação onde o app é testado.</dd>
+              <dd lang="en">Parents and guardians, plus the teams at the public vaccination clinics where the app is tested.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Minha atuação</dt><dt lang="en">My role</dt>
+              <dd lang="pt">Liderei o desenvolvimento pela Hash Bang: app em React Native para iOS e Android e backend escalável em Python e Django.</dd>
+              <dd lang="en">Led development through Hash Bang: a React Native app for iOS and Android and a scalable Python/Django backend.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Parceria de pesquisa</dt><dt lang="en">Research partnership</dt>
+              <dd lang="pt">Construído com o pesquisador Eugênio Barbosa de Melo Júnior e a equipe do Programa de Pós-Graduação em Enfermagem da UFPI.</dd>
+              <dd lang="en">Built with researcher Eugênio Barbosa de Melo Júnior and the team of UFPI's Graduate Nursing Program.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Cuidado editorial</dt><dt lang="en">Editorial care</dt>
+              <dd lang="pt">Trabalhei junto a pesquisadores e profissionais de saúde para garantir precisão científica, usabilidade e acessibilidade.</dd>
+              <dd lang="en">Worked alongside researchers and healthcare professionals to ensure scientific accuracy, usability and accessibility.</dd>
+            </div>
+            <div>
+              <dt lang="pt">Reconhecimento</dt><dt lang="en">Recognition</dt>
+              <dd lang="pt">Destaque em inovação em tecnologia da saúde no 27º CBCENF, apoiando o aumento da cobertura vacinal no Brasil.</dd>
+              <dd lang="en">Highlighted as a health technology innovation at the 27th CBCENF, supporting Brazil's immunization coverage.</dd>
+            </div>
+          </dl>
+
+          <a class="case__link no-print" href="https://vacinacao.app.br/#inicio" rel="noopener">vacinacao.app.br ↗</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Experiência profissional</span><span lang="en">Professional experience</span></h2>
+        </div>
+
+        <div class="timeline">
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Engenheiro de Software &amp; Cofundador</span><span lang="en">Software Engineer &amp; Co-Founder</span></h3>
+              <div class="job__when"><span lang="pt">fev/2022 – presente</span><span lang="en">Feb 2022 – Present</span></div>
+            </div>
+            <div class="job__at">Hash Bang LTDA · Picos, PI</div>
+            <ul>
+              <li lang="pt">Cofundei a <strong>Hash Bang LTDA</strong>, atuando como engenheiro full stack web e mobile em soluções para os setores de <strong>saúde, educação, energia e distribuição de gás</strong>.</li>
+              <li lang="pt">Desenvolvi o <strong>VacinAção®</strong> em parceria com o pesquisador Eugênio Barbosa de Melo Júnior e a equipe do Programa de Pós-Graduação em Enfermagem da UFPI — aplicativo premiado no <strong>27º CBCENF</strong> como destaque em inovação em tecnologia da saúde.</li>
+              <li lang="pt">Liderei o ciclo completo de desenvolvimento: app mobile em <strong>React Native</strong> (iOS e Android) e backend escalável em <strong>Python e Django</strong>.</li>
+              <li lang="pt">Colaborei com pesquisadores e profissionais de saúde para garantir <strong>precisão científica, usabilidade e acessibilidade</strong> em um contexto de saúde pública.</li>
+              <li lang="en">Co-founded <strong>Hash Bang LTDA</strong>, working as a full stack web and mobile engineer on solutions for <strong>healthcare, education, energy and gas distribution</strong>.</li>
+              <li lang="en">Built <strong>VacinAção®</strong> with researcher Eugênio Barbosa de Melo Júnior and the team of UFPI's Graduate Nursing Program — an app recognized at the <strong>27th CBCENF</strong> as a leading public health technology innovation.</li>
+              <li lang="en">Led the full development cycle: a <strong>React Native</strong> mobile app (iOS and Android) and a scalable backend in <strong>Python and Django</strong>.</li>
+              <li lang="en">Collaborated with researchers and healthcare professionals to ensure <strong>scientific accuracy, usability and accessibility</strong> in a public health context.</li>
+            </ul>
+            <div class="stack job__stack">Ruby on Rails · Python · Django · FastAPI · React Native · JavaScript</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Engenheiro de Software Backend Sênior</span><span lang="en">Senior Backend Software Engineer</span></h3>
+              <div class="job__when"><span lang="pt">dez/2023 – out/2025</span><span lang="en">Dec 2023 – Oct 2025</span></div>
+            </div>
+            <div class="job__at">Zapay · Brasília, DF</div>
+            <ul>
+              <li lang="pt">Atuei como desenvolvedor <strong>backend Python</strong> na Zapay, startup de soluções para débitos veiculares adquirida pelo grupo <strong>Corpay / Sem Parar</strong>.</li>
+              <li lang="pt">Integrei a squad <strong>Detran Rosa (Correlatos)</strong>, responsável pelos produtos de documentação de veículos e condutores.</li>
+              <li lang="pt">Desenvolvi e mantive serviços de <strong>monitoramento de pontos da CNH</strong>, <strong>emissão digital do CRLV</strong> e assistente de monitoramento de placas, com consultas automáticas a DETRANs e órgãos parceiros.</li>
+              <li lang="pt">Contribuí para a <strong>escalabilidade, o desempenho e a confiabilidade</strong> da plataforma durante o período de crescimento e aquisição.</li>
+              <li lang="en">Worked as a <strong>Python backend</strong> developer at Zapay, a vehicle debt solutions startup acquired by the <strong>Corpay / Sem Parar</strong> group.</li>
+              <li lang="en">Joined the <strong>Detran Rosa (Correlatos)</strong> squad, responsible for vehicle and driver documentation products.</li>
+              <li lang="en">Built and maintained services for <strong>driver's licence point monitoring</strong>, <strong>digital vehicle registration issuance</strong> and a licence plate monitoring assistant, running automated queries against DETRANs and partner agencies.</li>
+              <li lang="en">Contributed to the <strong>scalability, performance and reliability</strong> of the platform through its growth and acquisition period.</li>
+            </ul>
+            <div class="stack job__stack"><span lang="pt">Python · APIs REST · Integrações com DETRANs e órgãos públicos</span><span lang="en">Python · REST APIs · Integrations with DETRANs and public agencies</span></div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Engenheiro de Software Web e Mobile Sênior</span><span lang="en">Senior Web and Mobile Software Engineer</span></h3>
+              <div class="job__when"><span lang="pt">fev/2022 – dez/2023</span><span lang="en">Feb 2022 – Dec 2023</span></div>
+            </div>
+            <div class="job__at">Imaginedone · Rio de Janeiro, RJ</div>
+            <ul>
+              <li lang="pt">Desenvolvedor full stack web e mobile na Imaginedone, consultoria de <strong>CRM</strong> com foco em grandes clientes dos setores de gás e energia.</li>
+              <li lang="pt">Liderei o desenvolvimento de um <strong>ecossistema CRM completo</strong>: serviços de backend, processamento assíncrono de dados de consumo de gás e apps mobile para entregadores e clientes finais.</li>
+              <li lang="pt">Construí o <strong>app do cliente final</strong>, com acompanhamento de consumo, pagamento de faturas e gestão de serviços.</li>
+              <li lang="pt">Projetei e implementei um sistema de <strong>raspagem de editais de licitação</strong> com busca avançada e recomendações geradas por IA.</li>
+              <li lang="en">Full stack web and mobile developer at Imaginedone, a <strong>CRM</strong> consultancy serving major clients in the gas and energy sectors.</li>
+              <li lang="en">Led the development of a <strong>complete CRM ecosystem</strong>: backend services, queue-based processing of gas consumption readings and mobile apps for delivery agents and end customers.</li>
+              <li lang="en">Built the <strong>end customer app</strong>, covering consumption tracking, invoice payments and service management.</li>
+              <li lang="en">Designed and implemented a <strong>bidding notice scraper</strong> with advanced search and AI-driven recommendations.</li>
+            </ul>
+            <div class="stack job__stack">Ruby on Rails · Sidekiq · C# · .NET Core MVC · React Native · React · Node.js · Heroku · AWS · Azure DevOps</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Coordenador de TI · Engenheiro de Software</span><span lang="en">IT Coordinator · Software Engineer</span></h3>
+              <div class="job__when"><span lang="pt">jun/2016 – jan/2022</span><span lang="en">Jun 2016 – Jan 2022</span></div>
+            </div>
+            <div class="job__at"><span lang="pt">IFPI — Instituto Federal do Piauí · São Raimundo Nonato, PI</span><span lang="en">IFPI — Federal Institute of Piauí · São Raimundo Nonato, PI</span></div>
+            <ul>
+              <li lang="pt">Liderei projetos full stack com <strong>Python (Django, DRF)</strong>, <strong>Ruby on Rails</strong> e <strong>React Native</strong>, definindo padrões arquiteturais e conduzindo avaliações técnicas.</li>
+              <li lang="pt">Implementei práticas <strong>DevOps</strong> com automação, pipelines de <strong>CI/CD</strong> e observabilidade via Zabbix, Prometheus e Grafana.</li>
+              <li lang="pt">Criei <strong>arquiteturas orientadas a eventos</strong> com RabbitMQ para escalar sistemas institucionais.</li>
+              <li lang="pt">Mentorei desenvolvedores juniores, promovendo boas práticas, code review e aprendizado contínuo.</li>
+              <li lang="en">Led full stack projects with <strong>Python (Django, DRF)</strong>, <strong>Ruby on Rails</strong> and <strong>React Native</strong>, setting architectural standards and running technical assessments.</li>
+              <li lang="en">Implemented <strong>DevOps</strong> practices with automation, <strong>CI/CD</strong> pipelines and observability through Zabbix, Prometheus and Grafana.</li>
+              <li lang="en">Built <strong>event-driven architectures</strong> with RabbitMQ to scale institutional systems.</li>
+              <li lang="en">Mentored junior developers, promoting best practices, code review and continuous learning.</li>
+            </ul>
+            <div class="stack job__stack">Python · Django · DRF · Ruby on Rails · React Native · RabbitMQ · CI/CD · Zabbix · Prometheus · Grafana</div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Engenheiro de Software Sênior · Consultor</span><span lang="en">Senior Software Engineer · Consultant</span></h3>
+              <div class="job__when"><span lang="pt">jan/2020 – 2022</span><span lang="en">Jan 2020 – 2022</span></div>
+            </div>
+            <div class="job__at">BIPP Tecnologia · Picos, PI</div>
+            <ul>
+              <li lang="pt">Consultor sênior na BIPP, plataforma que otimiza negociações e integra transações de compra e venda entre <strong>produtores, fornecedores e agroindústrias</strong>.</li>
+              <li lang="pt">Desenvolvi e mantive serviços de backend em <strong>Python e Django</strong>, criando <strong>APIs REST</strong> para integração de sistemas e aplicativos mobile.</li>
+              <li lang="pt">Realizei integrações de <strong>gateways de pagamento</strong>, incluindo parceria com adquirentes como a Zoop.</li>
+              <li lang="en">Senior consultant at BIPP, a platform that streamlines negotiations and integrates purchase and sale transactions among <strong>producers, suppliers and agro-industries</strong>.</li>
+              <li lang="en">Built and maintained backend services in <strong>Python and Django</strong>, designing <strong>REST APIs</strong> for system and mobile app integrations.</li>
+              <li lang="en">Integrated <strong>payment gateways</strong>, including partnerships with acquirers such as Zoop.</li>
+            </ul>
+            <div class="stack job__stack"><span lang="pt">Python · Django · APIs REST · Gateways de pagamento</span><span lang="en">Python · Django · REST APIs · Payment gateways</span></div>
+          </div>
+
+          <div class="job block">
+            <div class="job__head">
+              <h3 class="job__role"><span lang="pt">Engenheiro de Software</span><span lang="en">Software Engineer</span></h3>
+              <div class="job__when"><span lang="pt">jan/2010 – jun/2016</span><span lang="en">Jan 2010 – Jun 2016</span></div>
+            </div>
+            <div class="job__at">Instituto Multicom de Tecnologia Gerencial · Picos, PI</div>
+            <ul>
+              <li lang="pt">Liderei o desenvolvimento de projetos web com <strong>Ruby on Rails</strong>, PHP e Grails, definindo padrões arquiteturais e conduzindo avaliações técnicas.</li>
+              <li lang="pt">Criei plataformas nos setores de educação, empreendedorismo e cooperativismo: <strong>GestorBox</strong> (ensino gamificado de empreendedorismo), <strong>C.H.O.Q.U.E.</strong> (modelagem interativa de planos de negócio) e <strong>Softgeomel</strong> (gestão para cooperativas de apicultores com coleta georreferenciada).</li>
+              <li lang="pt">Atuei em todas as fases do ciclo de desenvolvimento, da análise de requisitos ao deploy, mentorando desenvolvedores e promovendo práticas ágeis.</li>
+              <li lang="en">Led the development of web projects with <strong>Ruby on Rails</strong>, PHP and Grails, setting architectural standards and running technical assessments.</li>
+              <li lang="en">Built platforms across education, entrepreneurship and cooperative management: <strong>GestorBox</strong> (gamified entrepreneurship learning), <strong>C.H.O.Q.U.E.</strong> (interactive business plan modeling) and <strong>Softgeomel</strong> (beekeeping cooperative management with georeferenced data collection).</li>
+              <li lang="en">Covered every phase of the development cycle, from requirements analysis to deployment, mentoring developers and promoting agile practices.</li>
+            </ul>
+            <div class="stack job__stack">Ruby on Rails · PHP · Grails</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="marker" aria-hidden="true"></span>
+          <h2><span lang="pt">Competências</span><span lang="en">Skills</span></h2>
+        </div>
+
+        <ul class="legend">
+          <li><i aria-hidden="true"></i><span><span lang="pt">Básico</span><span lang="en">Basic</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Intermediário</span><span lang="en">Intermediate</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Bom</span><span lang="en">Good</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Avançado</span><span lang="en">Advanced</span></span></li>
+          <li><i aria-hidden="true"></i><span><span lang="pt">Especialista</span><span lang="en">Expert</span></span></li>
+        </ul>
+
+        <div class="skills">
+
+          <div class="skill" data-level="5">
+            <div class="skill__head">
+              <span class="skill__name">Python · Django · FastAPI</span>
+              <span class="skill__years"><span lang="pt">9 anos</span><span lang="en">9 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Especialista</span><span lang="en">Expert</span></div>
+          </div>
+
+          <div class="skill" data-level="5">
+            <div class="skill__head">
+              <span class="skill__name">Ruby on Rails</span>
+              <span class="skill__years"><span lang="pt">15 anos</span><span lang="en">15 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Especialista</span><span lang="en">Expert</span></div>
+          </div>
+
+          <div class="skill" data-level="5">
+            <div class="skill__head">
+              <span class="skill__name"><span lang="pt">Arquitetura de software</span><span lang="en">Software architecture</span></span>
+              <span class="skill__years"><span lang="pt">12 anos</span><span lang="en">12 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Especialista</span><span lang="en">Expert</span></div>
+          </div>
+
+          <div class="skill" data-level="5">
+            <div class="skill__head">
+              <span class="skill__name"><span lang="pt">APIs REST e integrações</span><span lang="en">REST APIs and integrations</span></span>
+              <span class="skill__years"><span lang="pt">12 anos</span><span lang="en">12 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Especialista</span><span lang="en">Expert</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">React Native · Mobile</span>
+              <span class="skill__years"><span lang="pt">9 anos</span><span lang="en">9 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">React · TypeScript · Node</span>
+              <span class="skill__years"><span lang="pt">8 anos</span><span lang="en">8 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name"><span lang="pt">RabbitMQ · Filas e eventos</span><span lang="en">RabbitMQ · Queues and events</span></span>
+              <span class="skill__years"><span lang="pt">9 anos</span><span lang="en">9 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">Docker · Kubernetes · CI/CD</span>
+              <span class="skill__years"><span lang="pt">9 anos</span><span lang="en">9 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">PostgreSQL · MongoDB</span>
+              <span class="skill__years"><span lang="pt">12 anos</span><span lang="en">12 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name">AWS · Azure</span>
+              <span class="skill__years"><span lang="pt">8 anos</span><span lang="en">8 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="4">
+            <div class="skill__head">
+              <span class="skill__name"><span lang="pt">Liderança técnica e mentoria</span><span lang="en">Technical leadership</span></span>
+              <span class="skill__years"><span lang="pt">9 anos</span><span lang="en">9 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Avançado</span><span lang="en">Advanced</span></div>
+          </div>
+
+          <div class="skill" data-level="3">
+            <div class="skill__head">
+              <span class="skill__name">C# · .NET</span>
+              <span class="skill__years"><span lang="pt">4 anos</span><span lang="en">4 yrs</span></span>
+            </div>
+            <div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="skill__level"><span lang="pt">Bom</span><span lang="en">Good</span></div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </article>
+
+  <footer class="page-foot no-print">Guilherme Feitoza de Sousa Lima · Picos, PI · <span lang="pt">Brasil</span><span lang="en">Brazil</span></footer>
+</div>
+
+<script src="assets/js/app.js" defer></script>
+
+</body>
+</html>

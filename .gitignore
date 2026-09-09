@@ -1,0 +1,9 @@
+# material pessoal de origem (PDFs do CV, carta de apresentação): fica só na máquina
+_local/
+
+# lixo de sistema e de editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

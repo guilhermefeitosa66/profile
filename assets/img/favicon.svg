@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9b73f"/>
+      <stop offset="1" stop-color="#ef852e"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#201e1a"/>
+  <path d="M0 0h64v30L0 64Z" fill="url(#g)" opacity=".9"/>
+  <text x="32" y="45" text-anchor="middle" font-family="'Space Grotesk',Helvetica,Arial,sans-serif"
+        font-size="29" font-weight="700" fill="#201e1a">GF</text>
+</svg>
