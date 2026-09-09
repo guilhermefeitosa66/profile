@@ -416,6 +416,17 @@ h1, h2, h3, p { margin: 0; }
 .contact a { color: var(--dark-text); }
 .contact a:hover { color: #fff; }
 
+/* etiqueta discreta ao lado do telefone — diz que o link abre uma conversa */
+.contact__note {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
 .edu { display: flex; flex-direction: column; gap: 16px; font-size: 12.5px; line-height: 1.5; }
 .edu__name {
   font-weight: 700;
@@ -882,6 +893,9 @@ h1, h2, h3, p { margin: 0; }
   .contact { gap: 5px; }
   .contact li { grid-template-columns: 9px 1fr; gap: 7px; }
   .contact li::before { width: 5px; height: 5px; margin-top: 5px; }
+  /* na coluna estreita do papel a etiqueta cai para a linha de baixo:
+     sem a margem ela alinha com o número, em vez de parecer deslocada */
+  .contact__note { font-size: 7.4px; margin-left: 0; }
   .edu { gap: 2.6mm; }
   .edu__name { font-size: 9.3px; }
   .edu__when { font-size: 8.2px; margin-top: 2px; }
