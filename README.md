@@ -1,6 +1,6 @@
 # profile
 
-Currículo online de **Guilherme Feitoza de Sousa Lima** — Engenheiro de Software
+Currículo online de **Guilherme Feitoza** — Engenheiro de Software
 Full Stack · Web & Mobile.
 
 No ar em **<https://guilhermefeitosa66.github.io/profile/>**
